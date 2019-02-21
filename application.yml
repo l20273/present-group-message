@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:h2test
+    username: sa
+    password: 12345678
+    driverClassName: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /console
+  redis:
+    host: localhost
+    port: 6379
+    repositories.enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    template:
+      retry:
+        enabled: true
+        initial-interval: 2s
+  data:
+    repositories.enabled: true
+
+logging:
+  level:
+    com.bluegrotto.pgm: DEBUG
+
